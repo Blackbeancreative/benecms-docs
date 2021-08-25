@@ -20,7 +20,7 @@ NOTE: When creating your project, you will have a specific editor account genera
 
 # Managing your project
 
-We have created your project, now we have to access it. Pinco CMS is all hosted through the cloud thus not requiring you to create a specific deployment environment for the CMS. You can access the CMS via [https://manage.blackbeanpartners.com/](https://manage.blackbeanpartners.com/)
+We have created your project, now we have to access it. Pinco CMS is all hosted through the cloud thus not requiring you to create a specific deployment environment for the CMS. You can access the CMS via [https://manage.benecms.com/](https://manage.benecms.com/)
 
 **Remember to login using the same email and password as your main account**
 

@@ -10,7 +10,7 @@ Your `projectId` can be found in the Pinco Console as a "Unique Name".
 
 **Example URL**
 
-`https://api.blackbeanpartners.com/rest/{projectId}/{collection}/{document}`
+`https://api.benecms.com/rest/{projectId}/{collection}/{document}`
 
 **If a collection and document are not provided in the URL:**
 
@@ -32,7 +32,7 @@ As of **July 29th, 2021**, the possibility of tagging different pieces of conten
 
 **Example URL**
 
-`https://api.blackbeanpartners.com/rest/{projectId}/tagged/{name}`
+`https://api.benecms.com/rest/{projectId}/tagged/{name}`
 
 ### Preview / Draft Mode
 
@@ -56,7 +56,7 @@ Creating a valid form that can be processed by the CMS is fairly simple and only
 
 1. Your projectId must be a field inside of your form
 2. Your form must contain a field labelled as `formName`
-3. Your action (or if using ajax/fetch, endpoint) must be pointed towards: `https://api.blackbeanpartners.com/forms/send`
+3. Your action (or if using ajax/fetch, endpoint) must be pointed towards: `https://api.benecms.com/forms/send`
 
 An example of including your `projectId` and `formName` in your form can be as follows.
 
