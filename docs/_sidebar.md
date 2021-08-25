@@ -1,5 +1,4 @@
 * [Home](/)
-* [About](about.md)
 * [Getting Started](getting-started.md)
 * [Editors](editors.md)
 * [Collections](collections.md)
