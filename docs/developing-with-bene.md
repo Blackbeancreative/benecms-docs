@@ -40,6 +40,14 @@ All documents can be set to a "Draft" mode which will hide the document from bei
 
 This can be a useful feature especially if using a Preview mode built into your framework such as Next JS.
 
+### Accessing DataStore
+
+As of **November 4th, 2021** you can now create/modify basic key, value items for your project. They are globally accessed through the RESTful API. 
+
+**Example URL**
+
+`https://api.benecms.com/rest/{projectId}/datastore`
+
 ### Development / Localhost
 
 By default, our CMS enforces CORS however we have a few open URL's where development and testing will allow such requests.
