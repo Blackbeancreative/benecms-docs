@@ -73,6 +73,10 @@ If you add a `select` widget, then you will only want to add dropdown elements w
     - Let's say you had a Products collection and wanted to list a Product inside of your Document. You would select your "Products" collection as the Schema value and the editor will have a choice of which product that wants to be embedded in the document.
     - Very useful if you want to assign different forms of content to different documents.
 
+#### DataStore 
+
+- Allows referencing of values inside of DataStore
+
 #### Object
 
 - Creates a schema field inside of the current field
