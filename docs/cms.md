@@ -58,7 +58,7 @@ Giving an editor specific roles will help yourself and help the Editor not have 
 
 **Collections and Tags** will allow the Editor to modify Content / Documents and modify Documents that are inside of a collection as well as modify the Collection itself. **As of July 29th, 2021** this role will now allow you to modify and manage Tags.
 
-**Collections, Tags and Schemas** will allow the Editor to modify Content / Documents and modify anything belonging to Collections and Schemas. This role should mainly be assigned to someone who either knows what they are doing or is a **developer**.
+**Collections, Tags, Users and Schemas** will allow the Editor to modify Content / Documents and modify anything belonging to Collections, Users and Schemas. This role should mainly be assigned to someone who either knows what they are doing or is a **developer**.
 
 **Manager** will give full access to allow modification of any form of data including the addition / deletion of Editors.
 

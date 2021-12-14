@@ -16,10 +16,10 @@
   - [User Lifecycle](#user-lifecycle)
   - [Viewing Session](#session)
   - [Creation](#creation)
-  - [Authentication](#login)
-  - [Activation](#activate)
-  - [Forgot My Password (Send Forgot)](#forgot-send-forgot)
-  - [Forgot My Password (Validate & New Password)](#forgot-validate-amp-new-password)
+  - [Authentication](#authentication)
+  - [Activation](#activation)
+  - [Forgot My Password (Send Forgot)](#forgot-my-password-send-forgot)
+  - [Forgot My Password (Validate & New Password)](#forgot-my-password-validate-amp-new-password)
   - [Updating a user](#update)
   - [Logging out a user](#logout)
 
@@ -30,7 +30,7 @@
 
 All REST endpoints must require `projectId` as this is the unique identifier to pull the correct documents.
 
-Your `projectId` can be found in the Pinco Console as a "Unique Name".
+Your `projectId` can be found in the Bene Console as a "Unique Name".
 
 **Example URL**
 
@@ -121,7 +121,7 @@ In order to fully utilize the Users feature, the project manager must enable the
 
 The way our User feature works is based off JWT tokens and is purely based to be intregated via a series of POST/GET requests. All cookies are stored through BeneCMS therefore you can keep your website mostly cookie-less.
 
-### Session
+### Viewing Session
 
 In order to initialize the session, and initialize the `isSite` cookie to register. You must send a session request before you consider using Login, Register, Activate, Forgot and Update methods.
 
@@ -146,7 +146,7 @@ What this will do is assign a cookie called `isSite` which is where we can find 
 - For password creation, add a secondary "confirm password" field to make sure passwords are matching.
 - **If you are a Project Manager**, make sure you have **redirectUri** and **activateUri** filled out in the Project Settings found in BeneCMS Console.
 
-### Login
+### Authentication
 
 **API Route**
 `POST https://api.benecms.com/user/login` 
@@ -160,7 +160,7 @@ What this will do is assign a cookie called `isSite` which is where we can find 
 - All passwords are mandatory to be one uppercase, one lowercase, one number and one special character minimum.
 - It is recommended to make `projectId` a hidden value that is not seen to the user.
 
-### Activate
+### Activation
 
 **API Route**
 `POST https://api.benecms.com/user/activate` 
@@ -174,7 +174,7 @@ What this will do is assign a cookie called `isSite` which is where we can find 
 - It is recommended to make `projectId` a hidden value that is not seen to the user.
 - **If you are a Project Manager**, make sure you have **redirectUri** and **activateUri** filled out in the Project Settings found in BeneCMS Console.
 
-### Forgot (Send Forgot)
+### Forgot My Password (Send Forgot)
 
 **API Route**
 `POST https://api.benecms.com/user/sendForgot` 
@@ -187,7 +187,7 @@ What this will do is assign a cookie called `isSite` which is where we can find 
 - It is recommended to make `projectId` a hidden value that is not seen to the user.
 - **If you are a Project Manager**, make sure you have **redirectUri** and **forgotUri** filled out in the Project Settings found in BeneCMS Console.
 
-### Forgot (Validate & New Password)
+### Forgot My Password (Validate & New Password)
 
 **API Route**
 `POST https://api.benecms.com/user/forgot` 
