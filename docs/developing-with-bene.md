@@ -14,14 +14,14 @@
 - [Using Users API](#using-users-api)
   - [Special Note](#special-note)
   - [User Lifecycle](#user-lifecycle)
-  - [Session](#session)
+  - [Viewing Session](#session)
   - [Creation](#creation)
-  - [Login](#login)
-  - [Activate](#activate)
-  - [Forgot (Send Forgot)](#forgot-send-forgot)
-  - [Forgot (Validate & New Password)](#forgot-validate-amp-new-password)
-  - [Update](#update)
-  - [Logout](#logout)
+  - [Authentication](#login)
+  - [Activation](#activate)
+  - [Forgot My Password (Send Forgot)](#forgot-send-forgot)
+  - [Forgot My Password (Validate & New Password)](#forgot-validate-amp-new-password)
+  - [Updating a user](#update)
+  - [Logging out a user](#logout)
 
 
 ## Using RESTFUL API
