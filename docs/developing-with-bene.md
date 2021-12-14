@@ -1,5 +1,29 @@
 # Developing with Bene
 
+### Table of Contents
+- [Using Restful API](#using-restful-api)
+  - [URL Formatting](#url-formatting)
+    - [Finding Tagged Content](#finding-tagged-content)
+  - [Preview / Draft Mode](#preview-draft-mode)
+  - [Accessing DataStore](#accessing-datastore)
+  - [Development / Localhost](#development-localhost)
+- [Using Forms API](#using-forms-api)
+  - [Creating Forms](#creating-forms)
+  - [Validating form data](#validating-forms-data)
+  - [Frequently Asked Questions](#frequently-asked-questions)
+- [Using Users API](#using-users-api)
+  - [Special Note](#special-note)
+  - [User Lifecycle](#user-lifecycle)
+  - [Session](#session)
+  - [Creation](#creation)
+  - [Login](#login)
+  - [Activate](#activate)
+  - [Forgot (Send Forgot)](#forgot-send-forgot)
+  - [Forgot (Validate & New Password)](#forgot-validate-amp-new-password)
+  - [Update](#update)
+  - [Logout](#logout)
+
+
 ## Using RESTFUL API
 
 ### URL Formatting
@@ -84,3 +108,116 @@ When a form is successfully submitted, you will be able to find it under `forms`
 #### Why are my files not being submitted?
 
 We currently **do not** support any form of uploading that requires form data's encoding type to be `multipart/form-data`
+
+## Using Users API
+
+### Special Note
+
+In order to fully utilize the Users feature, the project manager must enable the feature inside of their Project Settings in BeneCMS Console. It is also highly recommended that you modify the URL paths for Login, Redirect, Activation and Forgot/Recovery.
+
+**If you also get stuck or need help**, check out our official example (using CRA) that utilizes the Users API here: https://github.com/blackbeancreative/benecms-authentication
+
+### User Lifecycle
+
+The way our User feature works is based off JWT tokens and is purely based to be intregated via a series of POST/GET requests. All cookies are stored through BeneCMS therefore you can keep your website mostly cookie-less.
+
+### Session
+
+In order to initialize the session, and initialize the `isSite` cookie to register. You must send a session request before you consider using Login, Register, Activate, Forgot and Update methods.
+
+To get a users current session you must submit a GET request to `https://api.benecms.com/user/session?id=[projectId]` where `projectId` is replaced with the project identifier that you login to BeneCMS Manage with.
+
+What this will do is assign a cookie called `isSite` which is where we can find a users session on that specific page. This was made in the event there is two sites that a user visits back to back that both rely on Bene CMS that we call **multi-sessioning**.
+
+### Creation
+
+**API Route**
+`POST https://api.benecms.com/user/create` 
+
+**Fields**
+- emailAddress (Email Address)
+- password (Password)
+- projectId (Project Identifier via BeneCMS)
+
+**Tips**
+- Make sure `emailAddress` is validated with `type="email"` as well as adding additional regex as a confirmation email will be sent to this address on confirmation.
+- All passwords are mandatory to be one uppercase, one lowercase, one number and one special character minimum.
+- It is recommended to make `projectId` a hidden value that is not seen to the user.
+- For password creation, add a secondary "confirm password" field to make sure passwords are matching.
+- **If you are a Project Manager**, make sure you have **redirectUri** and **activateUri** filled out in the Project Settings found in BeneCMS Console.
+
+### Login
+
+**API Route**
+`POST https://api.benecms.com/user/login` 
+
+**Fields**
+- emailAddress (Email Address)
+- password (Password)
+- projectId (Project Identifier via BeneCMS)
+
+**Tips**
+- All passwords are mandatory to be one uppercase, one lowercase, one number and one special character minimum.
+- It is recommended to make `projectId` a hidden value that is not seen to the user.
+
+### Activate
+
+**API Route**
+`POST https://api.benecms.com/user/activate` 
+
+**Fields**
+- emailAddress (Email Address)
+- key (Activation Code)
+- projectId (Project Identifier via BeneCMS)
+
+**Tips**
+- It is recommended to make `projectId` a hidden value that is not seen to the user.
+- **If you are a Project Manager**, make sure you have **redirectUri** and **activateUri** filled out in the Project Settings found in BeneCMS Console.
+
+### Forgot (Send Forgot)
+
+**API Route**
+`POST https://api.benecms.com/user/sendForgot` 
+
+**Fields**
+- emailAddress (Email Address)
+- projectId (Project Identifier via BeneCMS)
+
+**Tips**
+- It is recommended to make `projectId` a hidden value that is not seen to the user.
+- **If you are a Project Manager**, make sure you have **redirectUri** and **forgotUri** filled out in the Project Settings found in BeneCMS Console.
+
+### Forgot (Validate & New Password)
+
+**API Route**
+`POST https://api.benecms.com/user/forgot` 
+
+**Fields**
+- emailAddress (Email Address)
+- password (Password)
+- key (Activation Code)
+- projectId (Project Identifier via BeneCMS)
+
+**Tips**
+- All passwords are mandatory to be one uppercase, one lowercase, one number and one special character minimum.
+- It is recommended to make `projectId` a hidden value that is not seen to the user.
+- **If you are a Project Manager**, make sure you have **redirectUri** filled out in the Project Settings found in BeneCMS Console.
+
+### Update
+
+**API Route**
+`POST https://api.benecms.com/user/update` 
+
+**Fields**
+- datastore (Stringify JSON)
+
+**Tips**
+- Datastore **must** be validated via JSON before being submitted, otherwise it will throw an error and may cause unexpected results.
+
+### Logout (Validate & New Password)
+
+**API Route**
+`POST https://api.benecms.com/user/logout` 
+
+**Tips**
+- **If you are a Project Manager**, make sure you have **redirectUri** filled out in the Project Settings found in BeneCMS Console.

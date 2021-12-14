@@ -1,13 +1,21 @@
-# Getting Started
+# Console / Project Manager
 
-## Creating an account
+### Table of Contents
+- [Getting Started](#getting-started)
+    - [Creating an account](#creating-an-account)
+    - [Creating your first project](#creating-your-first-project)
+- [Managing your project](#managing-your-project)
+
+## Getting Started
+
+### Creating an account
 
 To create an account you must have the following:
 
 1. Valid email address that can be accessible.
 2. Password that is at least 8 characters long.
 
-## Creating your first project
+### Creating your first project
 
 When creating your first project, there is a few things that should be noted prior to creation
 
@@ -18,7 +26,7 @@ Your project does not need to contain a unique title but must have a unique name
 
 NOTE: When creating your project, you will have a specific editor account generated using the same email address and password. Your password can be changed upon your first login in the editor.
 
-# Managing your project
+## Managing your project
 
 We have created your project, now we have to access it. Pinco CMS is all hosted through the cloud thus not requiring you to create a specific deployment environment for the CMS. You can access the CMS via [https://manage.benecms.com/](https://manage.benecms.com/)
 
